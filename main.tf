@@ -43,12 +43,12 @@ resource "aws_security_group" "mySG" {
 
 }
 resource "aws_instance" "ec2" {
-  ami                    = "ami-068c0051b15cdb816" # Amazon Linux 2 AMI
-  instance_type          = "t3.medium"
+  ami                    = "ami-02dfbd4ff395f2a1b" # Amazon Linux 2 AMI
+  instance_type          = "t3.micro"
   vpc_security_group_ids = [aws_security_group.mySG.id]
   count                  = "1"
 
   tags = {
-    Name = "server"
+    Name = "terraform"
   }
 }
